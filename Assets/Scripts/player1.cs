@@ -11,7 +11,7 @@ public class player1 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         speed = 6;
-        touchingBarrier = false;
+  
     }
 
     // Update is called once per frame
