@@ -11,12 +11,15 @@ public class Jump : MonoBehaviour
     public Image imgHealthBar;
     private int damage = 5;
     public bool touchingBarrier;
+    private Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
+        anim.SetBool("jump", false);
         if (!PauseControl.gameIsPaused)
         {
             if (Input.GetKeyDown(KeyCode.Space)   )
@@ -24,14 +27,8 @@ public class Jump : MonoBehaviour
                 if (touchingPlatform == true)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, playerJumpVelocity);
+                    anim.SetBool("jump", true);
                 }
-            }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-              //Player can't jump! (The game is paused)
             }
         }
     }
