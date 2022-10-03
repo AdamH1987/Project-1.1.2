@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 45366304}
   - component: {fileID: 45366306}
   - component: {fileID: 45366305}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad.1 (6)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 79823499}
   - component: {fileID: 79823498}
   - component: {fileID: 79823500}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1028,7 +1028,7 @@ GameObject:
   - component: {fileID: 877963970}
   - component: {fileID: 877963972}
   - component: {fileID: 877963971}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad.1 (4)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1138,6 +1138,9 @@ GameObject:
   m_Component:
   - component: {fileID: 977377817}
   - component: {fileID: 977377816}
+  - component: {fileID: 977377820}
+  - component: {fileID: 977377819}
+  - component: {fileID: 977377818}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -1205,13 +1208,63 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977377815}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0.54, z: 0}
+  m_LocalPosition: {x: -0.36, y: 0.95, z: 0}
   m_LocalScale: {x: 0.31405786, y: 0.39373517, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &977377818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977377815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0a4d84fe2b4454c9da0a9aee307138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+--- !u!50 &977377819
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977377815}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &977377820
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977377815}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.027438138, y: 0.07911889}
+  m_Size: {x: 3.7377927, y: 3.1346107}
+  m_Direction: 0
 --- !u!1 &1046512117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1349,7 @@ GameObject:
   - component: {fileID: 1157879768}
   - component: {fileID: 1157879770}
   - component: {fileID: 1157879769}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad.1 (3)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1684,7 +1737,7 @@ GameObject:
   - component: {fileID: 1651177382}
   - component: {fileID: 1651177384}
   - component: {fileID: 1651177383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad.1 (5)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1795,7 +1848,7 @@ GameObject:
   - component: {fileID: 1655018876}
   - component: {fileID: 1655018878}
   - component: {fileID: 1655018877}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad.1 (1)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -2050,7 +2103,7 @@ GameObject:
   - component: {fileID: 1932041825}
   - component: {fileID: 1932041827}
   - component: {fileID: 1932041826}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pad.1 (2)
   m_TagString: Platform
   m_Icon: {fileID: 0}
