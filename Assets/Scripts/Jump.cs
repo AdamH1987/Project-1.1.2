@@ -9,7 +9,7 @@ public class Jump : MonoBehaviour
     public float playerJumpVelocity = 5;
     public bool touchingPlatform;
     public Image imgHealthBar;
-    private int damage = 5;
+    private float damage = 0.01f;
     public bool touchingBarrier;
     private Animator anim;
     void Start()
@@ -41,8 +41,14 @@ public class Jump : MonoBehaviour
         }
         if (collision.gameObject.tag == "Barrier")
         {
-            imgHealthBar.fillAmount = imgHealthBar.fillAmount - (damage * 0.07f);
-            Time.timeScale = 0f;
+            imgHealthBar.fillAmount = imgHealthBar.fillAmount - damage;
+
+            if( imgHealthBar.fillAmount < 0)
+            {
+                //Time.timeScale = 0f;
+                // player dead
+            }
+
         }
     }
 

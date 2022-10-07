@@ -7,21 +7,23 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     float xDirection;
     int floorLayerMask, wallLayerMask;
-    SpriteRenderer sr;
     public float speed;
+    HelperScript helper;
+
     void Start()
     {
 
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
 
 
-        floorLayerMask = 1 << LayerMask.NameToLayer("platform");
+        floorLayerMask = 1 << LayerMask.NameToLayer("Platform");
         wallLayerMask = 1 << LayerMask.NameToLayer("wall");
 
 
         speed = 0.5f;
         xDirection = speed;
+
+        helper = gameObject.AddComponent<HelperScript>();
     }
 
     void FixedUpdate()
@@ -38,14 +40,9 @@ public class Enemy : MonoBehaviour
 
     void FaceDirection()
     {
-        if (rb.velocity.x > 0)
-        {
-            sr.flipX = true;
-        }
-        else
-        {
-            sr.flipX = false;
-        }
+        helper.FlipObject( (rb.velocity.x > 0) );
+
+       
     }
 
 

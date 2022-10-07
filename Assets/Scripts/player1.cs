@@ -8,39 +8,39 @@ public class player1 : MonoBehaviour
     Rigidbody2D rb;
     public int speed;
     private Animator anim;
-    bool facingRight = true;
     float inputHorizontal;
     float inputVertical;
+    HelperScript helper;
+    public GameObject slash;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        speed = 1;
+        speed = 2;
         anim = GetComponent<Animator>();
-        
+        helper = gameObject.AddComponent<HelperScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
+
         anim.SetBool("walk", false);
         anim.SetBool("duck", false);
 
-        if (inputHorizontal != 0)
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            rb.AddForce(new Vector2(inputHorizontal * speed, 0f));
+            transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime), transform.position.y);
             anim.SetBool("walk", true);
+            helper.FlipObject(false);
         }
-        
-        if (inputHorizontal > 0 && !facingRight)
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Flip();
-        }
-        if (inputHorizontal < 0 && facingRight)
-        {
-            Flip();
+            transform.position = new Vector2(transform.position.x - (speed * Time.deltaTime), transform.position.y);
+            anim.SetBool("walk", true);
+            helper.FlipObject(true);
         }
 
         if (Input.GetKey("down"))
@@ -48,14 +48,19 @@ public class player1 : MonoBehaviour
             anim.SetBool("duck", true);
         }
 
-        void Flip()
+        int moveDirection = 1;
+        if (Input.GetKeyDown("z"))
         {
-            Vector3 currentScale = gameObject.transform.localScale;
-            currentScale.x *= -1;
-            gameObject.transform.localScale = currentScale;
+            GameObject clone;
+            clone = Instantiate(slash, transform.position, transform.rotation);
 
-            facingRight = !facingRight;
+            Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
+
+            rb.velocity = new Vector3(15 * moveDirection, 0, 0);
+
+            rb.transform.position = new Vector3(transform.position.x, transform.position.y +0, transform.position.z + 1);
         }
+
     }
 }      
     

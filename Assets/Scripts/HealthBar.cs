@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour
     {
         if (collision.gameObject.tag == "Barrier")
         {
-            touchingBarrier = true;
+            //touchingBarrier = true;
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     {
         if (touchingBarrier == true)
         {
-            imgHealthBar.fillAmount = imgHealthBar.fillAmount - (damage * 0.07f);
+            //imgHealthBar.fillAmount = imgHealthBar.fillAmount - (damage * 0.07f);
         }
     }
 }

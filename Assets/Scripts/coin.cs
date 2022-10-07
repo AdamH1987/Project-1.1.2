@@ -46,7 +46,7 @@ public class coin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "Player")
         {
             // Pick up coin
             Destroy(this.gameObject);
