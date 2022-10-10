@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PauseControl : MonoBehaviour
 {
+    public GameObject Pausetitle;
     public static bool gameIsPaused;
     void Update()
     {
@@ -19,6 +20,8 @@ public class PauseControl : MonoBehaviour
         if(gameIsPaused)
         {
             Time.timeScale = 0f;
+            GameObject clone;
+            clone = Instantiate(Pausetitle, transform.position, transform.rotation);
         }
         else
         {
