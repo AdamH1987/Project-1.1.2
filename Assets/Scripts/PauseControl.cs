@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class PauseControl : MonoBehaviour
 {
-    public GameObject Pausetitle;
+    GameObject Pausetext;
     public static bool gameIsPaused;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown("Esc"))
         {
             gameIsPaused = !gameIsPaused;
-
+            Pausetext.gameObject.SetActive(false);
             PauseGame();
+
         }
     }
     void PauseGame()
     {
+
         if(gameIsPaused)
         {
             Time.timeScale = 0f;
-            GameObject clone;
-            clone = Instantiate(Pausetitle, transform.position, transform.rotation);
+            Pausetext.gameObject.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
+            Pausetext.gameObject.SetActive(false);
         }
     }
 }
